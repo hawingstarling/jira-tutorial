@@ -1,5 +1,5 @@
 from django.db import models
-from apps.organizations.models import Organization
+from organizations.models import Organization
 import uuid
 
 # Create your models here.

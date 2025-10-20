@@ -22,10 +22,10 @@ class Common(Configuration):
 
     # Your apps
     'apps.users',
-    'apps.organizations',
+    'apps.orgs',
     'apps.boards',
     'apps.audit_logs',
-    'organizations',
+    'organizations'
   ]
 
   MIDDLEWARE = [
