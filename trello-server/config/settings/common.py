@@ -1,5 +1,6 @@
 from configurations import Configuration
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,6 +21,10 @@ class Common(Configuration):
     'rest_framework.authtoken',  # token authentication
 
     # Your apps
+    'apps.users',
+    'apps.organizations',
+    'apps.boards',
+    'apps.audit_logs'
   ]
 
   MIDDLEWARE = [
@@ -41,6 +46,20 @@ class Common(Configuration):
   # Email
 
   # Postgres
+  DATABASES = {
+    # 'default': dj_database_url.config(
+    #         default='postgres://postgres:@postgres:5432/postgres',
+    #         conn_max_age=int(os.getenv('POSTGRES_CONN_MAX_AGE', 600))
+    #     )
+    'default': {
+      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+      'NAME': 'trello_tutorial',
+      'USER': 'postgres',
+      'PASSWORD': 'hungdat!234',
+      'HOST': 'localhost',
+      'PORT': '5433'
+    }
+  }
 
   # General
   TIME_ZONE = 'UTC'
