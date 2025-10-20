@@ -24,7 +24,8 @@ class Common(Configuration):
     'apps.users',
     'apps.organizations',
     'apps.boards',
-    'apps.audit_logs'
+    'apps.audit_logs',
+    'organizations',
   ]
 
   MIDDLEWARE = [
