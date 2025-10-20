@@ -3,14 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+html,
+body,
+:root {
+  height: 100%;
 }
 
 
@@ -130,13 +126,4 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
 }
