@@ -21,12 +21,17 @@ class Common(Configuration):
     'rest_framework.authtoken',  # token authentication
 
     # Your apps
-    'apps.users',
+    'apps.users', # App must be before organizations
     'apps.orgs',
     'apps.boards',
     'apps.audit_logs',
-    'organizations'
+    # 'organizations'
   ]
+
+  # Custom model
+  ORGANIZATIONS_ORGANIZATION_MODEL = "apps.orgs.Organization"
+  ORGANIZATIONS_ORGANIZATION_USER_MODEL = "apps.orgs.OrganizationUser"
+  ORGANIZATIONS_ORGANIZATION_OWNER_MODEL = "apps.orgs.OrganizationOwner"
 
   MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

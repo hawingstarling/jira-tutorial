@@ -1,5 +1,5 @@
 from django.db import models
-from organizations.models import Organization
+from apps.orgs.models import Organization
 import uuid
 
 # Create your models here.
@@ -15,7 +15,7 @@ class AuditLog(models.Model):
     CARD = "CARD"
 
   id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-  org = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name="audit_logs")
+  organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name="audit_logs")
   action = models.CharField(max_length=10, choices=Action.choices)
   entity_id = models.CharField(max_length=255)
   entity_type = models.CharField(max_length=10, choices=EntityType.choices)
