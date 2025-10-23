@@ -36,3 +36,12 @@ boto3==1.35.76
 
 # Organization
 django-organizations
+
+# Redis
+django-redis
+
+# Cors
+django-cors-headers
+
+# JWT
+djangorestframework-simplejwt
